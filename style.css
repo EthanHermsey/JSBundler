@@ -1,0 +1,447 @@
+
+/* main */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+body{
+  background-color: rgb(240, 240, 240);  
+  background-image: url('./5-dots.png');
+  
+  font-family: 'Roboto', sans-serif;
+  color: rgb(150, 150, 150);
+}
+/* Buttons */
+button{
+  width: 20vw;
+  height: 42px;  
+  padding-top: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.01em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(220, 220, 220);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(200, 200, 200);
+}
+
+
+
+
+
+/* input */
+input[type="file"]{
+  display: none;
+}
+
+
+/* List */
+ul{
+  margin: 0;
+  list-style-type: decimal;
+}
+li{
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+/* header */
+header{
+  background-image: url("./pattern-07.jpg");
+  background-position: center;
+
+  filter: saturate(1);
+  -webkit-animation: brightnessAnimation 15s infinite;
+  -moz-animation:    brightnessAnimation 15s infinite;
+  -o-animation:      brightnessAnimation 15s infinite;
+  animation:         brightnessAnimation 15s infinite;
+
+  position: sticky;
+  top: 0;
+  margin-top: 2vh;
+  padding: 0.5vw;
+  padding-left: 2vw;
+  
+  color: rgb(24, 40, 40);
+}
+
+header #logo{
+  font-size: 10vh;
+  font-weight: 700;
+  margin-left: 2.5vw;
+}
+
+header p{
+  font-size: 2.5vh;
+  margin-left: 3vw;
+}
+
+header #poweredLink{
+  position: absolute;
+
+  font-size: 80%;
+  right: 1vw;
+  top: 0;
+}
+
+@keyframes brightnessAnimation {
+  0% {
+    filter: saturate(1);
+  }
+  80% {
+    filter: saturate(1);
+  }
+  85% {
+    filter: saturate(2);
+  }
+  100% {
+    filter: saturate(1);
+  }
+}
+
+
+
+
+
+/* Container */
+#container{
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 5vh;
+}
+
+
+
+
+
+
+
+
+/* 3Steps */
+#threeSteps{  
+  border: 2px rgb(200, 200, 200) solid;
+  border-radius: 3px;
+  padding-bottom: 5px;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+#threeSteps p{
+  font-size: 1.3em;
+  margin-left: 20px;
+  color: rgb(120, 120, 120);
+}
+#threeSteps #showIndexInfo{
+  color: rgb(100, 100, 200)
+}
+#indexInfo{
+  position: fixed;
+  max-width: 35vw;
+  padding: 10px;
+  z-index: 9001;
+  
+  
+  border: 1px rgb(200, 200, 200) solid;
+  background: rgb(245, 245, 245);
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+/* buttonGrid */
+
+#buttonGrid{
+  padding-top: 2vh;
+  padding-bottom: 3vh;
+  grid-template-columns: 21vw calc(100% - 42vw) 21vw;
+  align-items: center;
+  justify-items: right;
+
+  background: rgba(80, 80, 80, 0.1);
+
+}
+#clearButton{
+  margin-right: 2%;
+}
+
+#obfLvl{
+	padding-left: 5px;
+	margin-top: 2px;
+	height: 40px;
+	font-size: 1.05em;	
+}
+
+#bundleButton{
+  position: relative;
+  margin-right: 2%;
+  font-size: 1.2em;
+  
+  background-image: url('./pattern-07.jpg');
+
+  filter: saturate(1);
+  -webkit-animation: brightnessAnimation 15s infinite; 
+  -moz-animation:    brightnessAnimation 15s infinite; 
+  -o-animation:      brightnessAnimation 15s infinite; 
+  animation:         brightnessAnimation 15s infinite; 
+}
+#cog{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 25px;
+  width: 25px;
+}
+
+
+
+
+
+
+
+
+/* fileLists */
+.grid{
+  width: 100%;
+  display: grid;
+}
+#fileDiv{
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+
+  background: rgba(80, 80, 80, 0.1);
+}
+#fileGrid{
+  width: 99%;
+  padding-left: 0.5%;
+  grid-template-columns: 21vw auto;
+}
+
+
+#orderFile, #fileList{
+  border: 2px solid rgb(200, 200, 200);  
+  padding: 10px;
+  transition: background-color 0.2s ease;  
+}
+#fileList{
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+
+.dragOver{
+  background-color: rgba(80, 80, 80, 0.1);
+}
+.dragOverFile{
+  background-color: rgba(80, 80, 80, 0.1);
+  border-style: dotted none solid none !important;
+}
+
+
+
+
+
+
+
+
+.removableDiv{
+  position: relative;
+  /* display: grid;
+  grid-template-columns: 95% 5%; */
+  align-items: center;
+  user-select: none;
+
+  height: 25px;
+
+  margin-top: 5px;
+
+  border-width: 1px;
+}
+
+.removableDiv #cross{
+  background: url('./cross.png');
+  background-size: cover;
+  background-position: center;
+  
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+
+  filter: invert(0.6);
+}
+.removableDiv #cross:hover{
+  filter: invert(0.4);
+  cursor: pointer;
+}
+
+.removableDiv #mu{
+  background: url('./arrow.png');
+  background-size: cover;
+  background-position: center;
+  
+  position: absolute;
+  top: 4px;
+  right: 50px;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+
+  filter: invert(0.6);
+}
+.removableDiv #mu:hover{
+  filter: invert(0.4);
+  cursor: pointer;
+}
+
+.removableDiv #md{
+  background: url('./arrow.png');
+  background-size: cover;
+  background-position: center;
+  
+  transform: rotateZ(180deg);
+  
+  position: absolute;
+  top: 11px;
+  right: 50px;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+
+  filter: invert(0.6);
+}
+.removableDiv #md:hover{
+  filter: invert(0.4);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mismatching */
+#mismatch{
+  position: fixed;
+  display: none;
+
+  top: 20vh;
+  left: 10vw;
+  height: 60vh;
+  width: 80vw;
+
+  color: rgb(24, 40, 40);
+
+  background: rgb(245, 245, 245);
+  
+  border: 2px rgb(200, 200, 200) solid;
+
+}
+#mismatchTitle{
+  margin-left: 10%;
+  font-size: 1.3em;
+}
+
+#mismatchGrid{
+  width: 90%;
+  height: 70%;
+  margin-left: 5%;
+
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 20% auto;
+  column-gap: 10%;
+  align-items: center;
+  justify-items: center;
+
+  background: rgba(80, 80, 80, 0.1);
+}
+
+#noRef, #missing{
+  width: 98%;
+  padding-top: 1%;
+  padding-left: 1%;
+  height: 90%;
+  border: 1px rgb(200, 200, 200) solid;
+  overflow-y: scroll;
+}
+
+#okButton, #cancelButton{
+  position: absolute;
+
+  text-align: center;
+  font-weight: 700;
+  padding-top: 1%;
+
+  border: 1px rgb(200, 200, 200) solid;
+
+  background: url('./pattern-07.jpg');
+
+  user-select: none;
+}
+#okButton{
+  bottom: 5%;
+  right: 5%;
+  height: 5%;
+  width: 20%;  
+}
+#cancelButton{
+  bottom: 5%;
+  right: 30%;
+  height: 5%;
+  width: 20%;
+}
+#okButton:hover, #cancelButton:hover{
+  cursor: pointer;
+  border: 2px rgb(200, 200, 200) solid;
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+
+  background: rgb(255, 255, 255);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  font-size: 80%;
+}

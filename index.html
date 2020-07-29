@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="An online tool to compress, obfuscate and bundle JavaScript files.">
+    <meta name="keywords" content="JavaScript, javascript, js, JS, bundle, bundler, pack, webpack, framework, sourcecode, obfuscate, obfuscator, compress, compressor, online, tool, javascript-obfuscator, files">
+    <meta name="author" content="Ethan Hermsey">
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157720343-1"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);};gtag('js', new Date());gtag('config', 'UA-157720343-1');</script> -->
+    
+    <script src="./jsobf.js"></script>
+    <script src="./zip.js"></script>    
+    <script src="./main.js"></script>  
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  
+  <body>  
+
+    <header>
+      <div id="logo">JS-Bundler</div>
+      <p id="poweredLink">Powered by: <a href="https://github.com/javascript-obfuscator/javascript-obfuscator">javascript-obfuscator</a></p>
+      <p>online javascript bundle tool.</p>
+    </header>
+    <div id="container">
+      <div id="threeSteps">
+        <p>Compress, obfuscate and bundle JavaScript files in 3 Steps.</p>
+        <ul>
+          <li>Load all the js files you want to bundle.</li>
+          <li>Load html index file (Optional). <span id="showIndexInfo">More..</span></li>
+          <li>Bundle! Your download will start automatically.</li>
+        </ul>
+
+        <div id="indexInfo">
+          Determines the order in which the files are bundled. This is to prevent "Cannot access before initialization" errors.<br>
+          It is supposed to have references to all the JavaScript files in script tags, this can be the standard html file you use for your website.<br><br>
+
+          If you don't use this file, the order of the JavaScript files will be used. (You can change the order by dragging the files in the list).
+        </div>
+      </div>
+      <div id="buttonGrid" class="grid">
+        <button id="clearButton">Clear all files</button>
+        <div>
+		  <label for="obfuscateCheckbox">Obfuscate code</label>
+		  <input type="checkbox" id="obfuscateCheckbox" checked="">
+        </div>
+        <button id="bundleButton">Bundle</button>
+        <input type="file" accept=".js" id="fileInput" multiple>
+        <input type="file" accept=".html" id="htmlInput" multiple>
+      </div>
+      <div id="fileDiv">
+        <div id="fileGrid" class="grid">
+          <button id="htmlButton">load HTML index file</button>
+          <div id="orderFile">Click the button or drop file here.</div>
+        </div>
+        <br>
+        <div id="fileGrid" class="grid">
+          <button id="fileButton">load JavaScript files</button>
+          <div id="fileList">Click the button or drop file here.</div>
+        </div>
+      </div>
+    </div>
+    <div id="mismatch">
+      <p id="mismatchTitle">Mismatch in index file and JavaScript files</p>
+      <div id="mismatchGrid">
+        <p>Files that are loaded but not referenced in HTML</p>
+        <p>Files that are referenced in HTML but not loaded</p>
+        <div id="noRef">
+        </div> 
+        <div id="missing">    
+        </div>
+      </div>      
+      <div id="cancelButton">Cancel</div>
+      <div id="okButton">Continue</div>
+    </div>
+
+    <footer>
+      Basis64
+    </footer>
+
+</body></html>
